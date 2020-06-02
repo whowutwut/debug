@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+
+#  collections:
+#  - victor.testing
+
+  tasks:
+  - name: Test the my_test module.
+    my_test:
+      name: 'hello'
+      new: true
+    register: testout
+  - name: Debug the my_test module's output
+    debug:
+      msg: '{{ testout }}'
