@@ -1,5 +1,5 @@
 #!/bin/bash
 
 set -x
-PYTHONPATH="$PYTHONPATH:./library"
+PYTHONPATH="$PYTHONPATH:./library:./module_utils"
 python -m my_test ./args.json
