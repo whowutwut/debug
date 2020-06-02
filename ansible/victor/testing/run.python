@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -x
+PYTHONPATH="$PYTHONPATH:./library"
+python -m my_test ./args.json
