@@ -69,9 +69,16 @@ message:
 from ansible.module_utils.basic import AnsibleModule
 
 try:
-   from ansible.module_utils.my_utils import helloWorld
-except ImportError:
-   from my_utils import helloWorld
+   print("attempt ansible collections...")
+   from ansible_collections.victor.testing.plugins.module_utils.my_utils import helloWorld
+except:
+   print("exception from collections...")
+   try:
+      print("attempt ansible.module_utils...")
+      from ansible.module_utils.my_utils import helloWorld
+   except ImportError:
+      print("attempt regular import...")
+      from my_utils import helloWorld
 
 def run_module():
     # define available arguments/parameters a user can pass to the module
